@@ -1,2 +1,2 @@
-# ums_back_v1
+# User Management Service Back End
 User Management Service Back End
