@@ -1,0 +1,41 @@
+Project Planning
+
+Objective: I want this services to handle user management, tracking and authentication and to be designed to be 
+horizontally scalable (probably not possible because I don't have the funds). Eventually, I will create a node module for client and server side usage for other applications.
+For now, this is just the backend of this service. This service is an attempt at abstracting most of what I am doing, however, I am uncertain if I will be doing it right.
+
+Main Technologies:
+ - ExpressTs
+ - Mongodb
+ - JWT
+
+ Desired Structure
+ - App <- routes <- controller <- service <- mongodb
+
+ App Flow (simple);
+ - Client -> authentication -> UMS
+     ^                          |
+     |                          v
+     <------------------ verification     
+
+
+User Stories (for back end):
+ - Will allow the creation of new groups
+ - Will store users within a group
+ - Will allow users to be given roles by the owner and administrators
+ - Will allow users with the administration roll to manage users within their group
+ - Will show authorization attempts for specific users within a group
+ - Will track which users are connected
+ - Will allow for group information to be requested by authorized users with an API key
+ - Will allow for individual user information to be requested by authorized users with API key
+
+Future User Stories:
+
+
+Mongodb documents
+
+group
+
+users
+
+roles

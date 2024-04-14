@@ -1,0 +1,19 @@
+-src
+  -interfaces
+    -(object/function/model types)
+  -utils
+    -(app utilities);
+  -services 
+    -(services for dealing with databases)
+  -controllers
+    -(controllers for the routes)
+  -routes
+    -(routes)
+  -models
+    -()
+  -databases
+  -expetions
+  -validations
+  -config
+  -app.ts
+  -index.ts
