@@ -1,13 +1,13 @@
 import express from 'express';
 import cors from 'cors';
-import { CREDENTIALS, LOG_FORMAT, ORIGIN } from './config';
+import { CREDENTIALS, ORIGIN } from './config';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import { Routes } from './interfaces/routes.interface';
-import { logger, stream } from './utils/logger';
-import morgan from 'morgan';
+import { logger } from './utils/logger';
 import mongoose from 'mongoose';
 import { dbConnection } from './databases';
+import { loggerMiddleware } from './middlewares/winstonLogger';
 
 class App {
   public app: express.Application;
@@ -26,7 +26,7 @@ class App {
   }
 
   private initializeMiddlewares() {
-    this.app.use(morgan(LOG_FORMAT, { stream }));
+    this.app.use(loggerMiddleware);
     this.app.use(express.json());
     this.app.use(bodyParser.json());
     this.app.use(cookieParser());
