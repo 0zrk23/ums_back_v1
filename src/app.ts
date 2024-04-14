@@ -1,7 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import { loggerOptions } from './middlewares/winstonLogger';
-import * as expressWinston from 'express-winston';
 import { CREDENTIALS, LOG_FORMAT, ORIGIN } from './config';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
@@ -46,13 +44,13 @@ class App {
   }
 
   private connectToDatabase() {
-    if (this.env !== "production") {
-      mongoose.set("debug", true);
+    if (this.env !== 'production') {
+      mongoose.set('debug', true);
     }
     mongoose
       .connect(dbConnection.url)
       .then(() => {
-        logger.info("📦 Connected to database");
+        logger.info('📦 Connected to database');
       })
       .catch((err) => {
         logger.error(`❌ Error connecting to database: ${err}`);
