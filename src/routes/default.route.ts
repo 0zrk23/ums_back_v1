@@ -1,17 +1,14 @@
-import { Router } from 'express';
-import { Routes } from '../interfaces/routes.interface';
 import { DefaultController } from '../controllers/default.controller';
+import { Route } from './route';
 
-export class DefaultRoute implements Routes {
-  public path = '';
-  public router = Router();
-  public pingController = new DefaultController();
+export class DefaultRoute extends Route {
 
   constructor() {
+    super('/ping', new DefaultController());
     this.initializeRoutes();
   }
 
-  private initializeRoutes() {
-    this.router.get(`${this.path}/ping`, this.pingController.ping);
+  protected initializeRoutes(): void {
+    this.router.get(`${this.path}`, this.controller.ping);
   }
 }

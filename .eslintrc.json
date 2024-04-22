@@ -36,6 +36,7 @@
         "exports": "only-multiline",
         "functions": "only-multiline"
       }
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }
