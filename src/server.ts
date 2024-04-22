@@ -1,5 +1,5 @@
 import App from './app';
-import { RoutesArray } from './controllers';
+import { RoutesArray } from './routes';
 
 const app = new App(RoutesArray);
 
